@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Peretz"
 include(":app")
- 
+include(":backend")
