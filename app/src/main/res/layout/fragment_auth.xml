@@ -50,6 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.50"
         android:text="@string/auth_text_proceed"
+        android:textColor="@color/white"
         android:paddingVertical="15dp"
         android:paddingHorizontal="62dp"
         android:background="@drawable/button_background"
