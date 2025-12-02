@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, AuthorizationFragment())
+                .replace(R.id.fragment_container, OtpFragment())
                 .commit()
         }
     }
