@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun initNavigation() {
         NavigationControllerFragment.Builder()
             .setRootScreen(LineNavigationControllerFragmentScreen())
