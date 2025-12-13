@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.peretz.databinding.FragmentOtpBinding
+import com.example.peretz.databinding.FragmentInputNumberBinding
 
+class InputNumberFragment : Fragment(R.layout.fragment_input_number) {
 
-class OtpFragment : Fragment(R.layout.fragment_otp) {
-
-    private var _binding: FragmentOtpBinding? = null
+    private var _binding: FragmentInputNumberBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,17 +18,19 @@ class OtpFragment : Fragment(R.layout.fragment_otp) {
         savedInstanceState: Bundle?
     ): View {
         _binding =
-            FragmentOtpBinding.inflate(inflater, container, false)
+            FragmentInputNumberBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentOtpBinding.bind(view)
+        _binding = FragmentInputNumberBinding.bind(view)
+    }
+
+    private fun onNextInputButtonClicked(phoneNumber: String) {
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+
     }
 }
