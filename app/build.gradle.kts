@@ -45,7 +45,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
+    implementation("com.github.santalu:maskara:1.0.0")
+
 
     implementation(libs.navigationcontroller)
 

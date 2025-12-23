@@ -36,14 +36,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp" />
 
-        <com.vicmikhailau.maskededittext.MaskedEditText
-            android:id="@+id/number_input_edit_text"
+        <EditText
+            android:id="@+id/otp_edit_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/introduction_otp_text"
             android:layout_marginTop="22dp"
             android:layout_marginHorizontal="80dp"
-            app:mask="__-__-__"
             android:inputType="number"
             android:digits="0123456789"
             android:textColor="@color/white"
@@ -55,7 +54,7 @@
             android:id="@+id/proceed_otp_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/number_input_edit_text"
+            app:layout_constraintTop_toBottomOf="@id/otp_edit_text"
             android:layout_marginTop="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
