@@ -2,11 +2,9 @@ package com.example.peretz
 
 import android.os.Bundle
 import android.text.Editable
-import android.text.TextWatcher
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import com.example.peretz.core.presentation.navigation.Screens
 import com.example.peretz.databinding.FragmentInputNumberBinding
@@ -22,23 +20,13 @@ class InputNumberFragment : Fragment(R.layout.fragment_input_number) {
     private val binding get() = _binding!!
     private val navigator: Navigator = NavigationControllerHolder.requireNavigator()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding =
-            FragmentInputNumberBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentInputNumberBinding.bind(view)
 
-        binding.proceedOtpButton.isEnabled = false
+        binding.proceedNumberInputButton.isEnabled = false
 
-        binding.proceedOtpButton.setOnClickListener {
+        binding.proceedNumberInputButton.setOnClickListener {
             val currentPhoneNumber = binding.numberInputEditText.text.toString()
             onNextInputButtonClicked(currentPhoneNumber)
         }
@@ -51,16 +39,9 @@ class InputNumberFragment : Fragment(R.layout.fragment_input_number) {
         val listener = MaskChangedListener(mask)
         binding.numberInputEditText.addTextChangedListener(listener)
 
-        binding.numberInputEditText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                val isFull = s?.length == 18
-                binding.proceedOtpButton.isEnabled = isFull
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-        })
+        binding.numberInputEditText.doAfterTextChanged { editable: Editable? ->
+            binding.proceedNumberInputButton.isEnabled = editable?.length == 18
+        }
     }
 
     private fun showRandomDigitsToast() {

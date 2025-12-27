@@ -7,9 +7,11 @@ import com.example.peretz.core.presentation.navigation.Screens
 import com.jamal_aliev.navigationcontroller.navigator.NavigationControllerHolder
 import me.aartikov.alligator.Navigator
 
-private val navigator: Navigator = NavigationControllerHolder.requireNavigator()
+
 
 class SplashFragment : Fragment(R.layout.fragment_splash_screen) {
+
+    private val navigator: Navigator = NavigationControllerHolder.requireNavigator()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
