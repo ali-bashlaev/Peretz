@@ -5,9 +5,13 @@ import java.io.Serializable
 
 object Screens {
 
-    data object Splash : Screen
+    data object Splash : Screen, Serializable {
+        private fun readResolve(): Any = Splash
+    }
 
-    data object InputPhone : Screen
+    data object InputPhone : Screen, Serializable {
+        private fun readResolve(): Any = InputPhone
+    }
 
     data class Otp(val phone: String) : Screen, Serializable
 }
