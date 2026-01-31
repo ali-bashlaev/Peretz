@@ -2,4 +2,5 @@
 <resources>
     <string name="auth_enter_text">Вход</string>
     <string name="auth_text_proceed">Продолжить</string>
+    <string name="meal_description_example">Листья романо, маринованное куриное филе, черри, ароматные сухарики,заправленные соусом цезарь, посыпанное стружкой сыра пармезан</string>
 </resources>
