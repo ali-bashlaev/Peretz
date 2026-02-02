@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.peretz.core.domain.di.model.MealModel
 import com.example.peretz.databinding.MealModelBinding
 
-class HomeFragmentAdapter : RecyclerView.Adapter<HomeFragmentAdapter.MealViewHolder>() {
-
-    var meals: List<MealModel> = emptyList()
+class HomeFragmentAdapter(
+    private val meals: List<MealModel> // Add constructor parameter
+) : RecyclerView.Adapter<HomeFragmentAdapter.MealViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -27,6 +27,8 @@ class HomeFragmentAdapter : RecyclerView.Adapter<HomeFragmentAdapter.MealViewHol
         with(holder.binding) {
             mealModelNameText.text = meal.name
             mealModelDescriptionText.text = meal.description
+            mealModelCoverImage.setImageResource(meal.image)
+            mealModelPriceText.text = meal.price.toString()
         }
     }
 

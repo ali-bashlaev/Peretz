@@ -14,6 +14,21 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView
 
+    val meals = listOf(
+        MealModel(
+            "Цезарь классический\n" +
+                    "с романо", "Листья романо, маринованное куриное филе, черри,\n" +
+                    "ароматные сухарики,заправленные соусом цезарь, посыпанное стружкой сыра пармезан",
+            345, R.drawable.caesar_salad
+        ),
+        MealModel(
+            "Салат Бангок ХИТ",
+            "Обжаренное куриное филе, отварная морковь,\n" +
+                    "яйца, маринованный лук, майонез",
+            345, R.drawable.bangkok_salad
+        )
+    )
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentHomeBinding.bind(view)
@@ -21,25 +36,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         recyclerView = binding.homeRecyclerView
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = HomeFragmentAdapter(
-
-        )
+        recyclerView.adapter = HomeFragmentAdapter(meals)
     }
 
-    val meals = listOf(
-        MealModel(
-            "Цезарь классический\n" +
-                    "с романо", "Листья романо, маринованное куриное филе, черри,\n" +
-                    " ароматные сухарики,заправленные соусом цезарь, посыпанное стружкой сыра пармезан",
-            345, R.drawable.caesar_salad
-        ),
-        MealModel(
-            "Салат Бангок ХИТ",
-            "Обжаренное куриное филе, отварная морковь,\n" +
-                    " яйца, маринованный лук, майонез",
-            345, R.drawable.bangkok_salad
-        )
-    )
+
 
     override fun onDestroyView() {
         super.onDestroyView()
