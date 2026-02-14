@@ -1,21 +1,21 @@
-package com.example.peretz
+package com.example.peretz.core.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.peretz.core.domain.di.model.MealModel
-import com.example.peretz.databinding.MealModelBinding
+import com.example.peretz.databinding.ItemMealBinding
 
-class HomeFragmentAdapter(
+class MealAdapter(
     private val meals: List<MealModel> // Add constructor parameter
-) : RecyclerView.Adapter<HomeFragmentAdapter.MealViewHolder>() {
+) : RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): MealViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = MealModelBinding.inflate(inflater, parent, false)
+        val binding = ItemMealBinding.inflate(inflater, parent, false)
         return MealViewHolder(binding)
     }
 
@@ -35,7 +35,6 @@ class HomeFragmentAdapter(
     override fun getItemCount(): Int = meals.size
 
     class MealViewHolder(
-        val binding: MealModelBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-    }
+        val binding: ItemMealBinding
+    ) : RecyclerView.ViewHolder(binding.root)
 }

@@ -1,10 +1,11 @@
-package com.example.peretz
+package com.example.peretz.core.presentation
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.peretz.R
 import com.example.peretz.core.presentation.navigation.Screens
 import com.jamal_aliev.navigationcontroller.controllers.LineNavigationControllerFragmentScreen
 import com.jamal_aliev.navigationcontroller.core.NavigationControllerFragment

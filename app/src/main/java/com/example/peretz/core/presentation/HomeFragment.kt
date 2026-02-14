@@ -1,18 +1,21 @@
-package com.example.peretz
+package com.example.peretz.core.presentation
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.peretz.R
 import com.example.peretz.core.domain.di.model.MealModel
+import com.example.peretz.core.domain.di.model.SaleModel
 import com.example.peretz.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var mealsRecyclerView: RecyclerView
+    private lateinit var salesRecyclerView: RecyclerView
+
 
     val meals = listOf(
         MealModel(
@@ -29,14 +32,20 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         )
     )
 
+    val sales = listOf(
+        SaleModel(R.drawable.img_sale),
+        SaleModel(R.drawable.img_sale_pizza)
+    )
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentHomeBinding.bind(view)
 
-        recyclerView = binding.homeRecyclerView
+        mealsRecyclerView = binding.mealsHomeList
+        mealsRecyclerView.adapter = MealAdapter(meals)
 
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = HomeFragmentAdapter(meals)
+        salesRecyclerView = binding.salesHomeList
+        salesRecyclerView.adapter = SaleAdapter(sales)
     }
 
 

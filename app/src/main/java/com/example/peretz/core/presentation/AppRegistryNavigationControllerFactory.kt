@@ -1,6 +1,6 @@
-package com.example.peretz.core.presentation.navigation
+package com.example.peretz.core.presentation
 
-import com.example.peretz.HomeFragment
+import com.example.peretz.core.presentation.navigation.Screens
 import com.jamal_aliev.navigationcontroller.core.NavigationControllerFactory
 
 class AppRegistryNavigationControllerFactory : NavigationControllerFactory() {

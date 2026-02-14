@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_item_sale_container"
+    tools:layout_marginTop="16dp"
+    tools:layout_marginHorizontal="16dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_sale_image"
+        tools:src="@drawable/img_sale"
+        android:scaleType="centerCrop"
+        android:layout_width="wrap_content"
+        android:layout_height="240dp" />
+
+</com.google.android.material.card.MaterialCardView>
