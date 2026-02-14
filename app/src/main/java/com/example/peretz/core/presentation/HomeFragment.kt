@@ -48,8 +48,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         salesRecyclerView.adapter = SaleAdapter(sales)
     }
 
-
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
