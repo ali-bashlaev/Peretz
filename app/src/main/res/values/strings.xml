@@ -4,4 +4,5 @@
     <string name="auth_introduction_text">Введите номер телефона. Вам придет СМС с кодом подтверждения.</string>
     <string name="auth_text_proceed">Продолжить</string>
     <string name="meal_description_example">Листья романо, маринованное куриное филе, черри, ароматные сухарики,заправленные соусом цезарь, посыпанное стружкой сыра пармезан</string>
+    <string name="home_roll_text">Ролл 🎁\nв подарок</string>
 </resources>

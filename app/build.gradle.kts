@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
+    implementation("com.github.wching:Android-Indefinite-Pager-Indicator:1.5")
 
     implementation(libs.navigationcontroller)
 

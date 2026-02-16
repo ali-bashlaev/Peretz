@@ -5,7 +5,7 @@
     android:id="@+id/root_home_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#242424"
+    android:background="@color/home_background"
     android:orientation="vertical"
     tools:context=".core.presentation.HomeFragment">
 
@@ -13,19 +13,33 @@
         android:id="@+id/sales_home_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="3"
         tools:listitem="@layout/item_sale" />
 
+    <com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
+        android:id="@+id/sales_recyclerview_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:dotColor="@color/home_unselected_dot_indicator"
+        app:selectedDotColor="@color/home_selected_dot_indicator"
+        app:dotSeparation="8dp"
+        app:fadingDotCount="4"
+        app:dotRadius="4dp"
+        app:selectedDotRadius="4dp"
+        android:layout_marginTop="16dp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/meals_home_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="3"
-        tools:listitem="@layout/item_meal" />
+        tools:itemCount="3" />
 
 </LinearLayout>
