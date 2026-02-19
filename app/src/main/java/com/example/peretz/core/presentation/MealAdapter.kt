@@ -7,7 +7,7 @@ import com.example.peretz.core.domain.di.model.MealModel
 import com.example.peretz.databinding.ItemMealBinding
 
 class MealAdapter(
-    private val meals: List<MealModel> // Add constructor parameter
+    private val meals: List<MealModel>
 ) : RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
 
     override fun onCreateViewHolder(

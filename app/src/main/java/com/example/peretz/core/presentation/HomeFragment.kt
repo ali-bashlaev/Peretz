@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.peretz.R
+import com.example.peretz.core.domain.di.model.CategoryModel
 import com.example.peretz.core.domain.di.model.MealModel
 import com.example.peretz.core.domain.di.model.SaleModel
 import com.example.peretz.databinding.FragmentHomeBinding
@@ -15,12 +16,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
     private lateinit var mealsRecyclerView: RecyclerView
     private lateinit var salesRecyclerView: RecyclerView
+    private lateinit var categoriesRecyclerView: RecyclerView
+
     private lateinit var pagerIndicatorHorizontal: IndefinitePagerIndicator
 
-
-    val meals = listOf(
+    val salads = listOf(
         MealModel(
             "Цезарь классический\n" +
                     "с романо", "Листья романо, маринованное куриное филе, черри,\n" +
@@ -42,6 +45,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         SaleModel(R.drawable.img_pizza)
     )
 
+    val categories = listOf(
+        CategoryModel(name = "Роллы", iconRes = R.drawable.ic_roll, meals = emptyList()),
+        CategoryModel(name = "Пицца", iconRes = R.drawable.ic_pizza, meals = emptyList()),
+        CategoryModel(name = "Cалаты", iconRes = R.drawable.ic_salad, meals = salads),
+        CategoryModel(name = "Бургеры", iconRes = R.drawable.ic_burger, meals = emptyList())
+    )
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val snapHelper = PagerSnapHelper()
@@ -49,11 +59,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         _binding = FragmentHomeBinding.bind(view)
 
         pagerIndicatorHorizontal = binding.salesRecyclerviewIndicator
+
         salesRecyclerView = binding.salesHomeList
         mealsRecyclerView = binding.mealsHomeList
+        categoriesRecyclerView = binding.categoriesHomeList
 
         salesRecyclerView.adapter = SaleAdapter(sales)
-        mealsRecyclerView.adapter = MealAdapter(meals)
+        mealsRecyclerView.adapter = MealAdapter(salads)
+        categoriesRecyclerView.adapter = CategoriesAdapter(categories)
 
         snapHelper.attachToRecyclerView(salesRecyclerView)
         pagerIndicatorHorizontal.attachToRecyclerView(salesRecyclerView)

@@ -11,4 +11,6 @@
     <color name="home_selected_dot_indicator">@color/brand_dove_gray</color>
     <color name="home_background">@color/brand_cod_gray</color>
     <color name="home_sale_text_color">@color/white</color>
+    <color name="home_category_background">@color/brand_mine_shaft</color>
+    <color name="home_category_text">@color/brand_dove_gray</color>
 </resources>
