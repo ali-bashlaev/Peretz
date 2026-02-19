@@ -9,5 +9,9 @@ class AppRegistryNavigationControllerFactory : NavigationControllerFactory() {
             Screens.Home::class.java,
             HomeFragment::class.java
         )
+        registerFragment(
+            Screens.Sale::class.java,
+            SaleFragment::class.java
+        )
     }
 }

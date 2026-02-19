@@ -9,13 +9,18 @@ import com.example.peretz.R
 import com.example.peretz.core.domain.di.model.CategoryModel
 import com.example.peretz.core.domain.di.model.MealModel
 import com.example.peretz.core.domain.di.model.SaleModel
+import com.example.peretz.core.presentation.navigation.Screens
 import com.example.peretz.databinding.FragmentHomeBinding
+import com.jamal_aliev.navigationcontroller.navigator.NavigationControllerHolder
 import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
+import me.aartikov.alligator.Navigator
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    private val navigator: Navigator = NavigationControllerHolder.requireNavigator()
 
     private lateinit var mealsRecyclerView: RecyclerView
     private lateinit var salesRecyclerView: RecyclerView
@@ -64,7 +69,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         mealsRecyclerView = binding.mealsHomeList
         categoriesRecyclerView = binding.categoriesHomeList
 
-        salesRecyclerView.adapter = SaleAdapter(sales)
+        salesRecyclerView.adapter = SaleAdapter(sales) { navigator.goForward(Screens.Sale) }
         mealsRecyclerView.adapter = MealAdapter(salads)
         categoriesRecyclerView.adapter = CategoriesAdapter(categories)
 

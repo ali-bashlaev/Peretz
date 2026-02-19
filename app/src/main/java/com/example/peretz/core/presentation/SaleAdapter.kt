@@ -7,7 +7,8 @@ import com.example.peretz.core.domain.di.model.SaleModel
 import com.example.peretz.databinding.ItemSaleBinding
 
 class SaleAdapter(
-    private val sales: List<SaleModel>
+    private val sales: List<SaleModel>,
+    private val onClick: (SaleModel) -> Unit
 ) : RecyclerView.Adapter<SaleAdapter.SaleViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -26,6 +27,9 @@ class SaleAdapter(
         val sale = sales[position]
         with(holder.binding) {
             itemSaleImage.setImageResource(sale.image)
+            root.setOnClickListener {
+                onClick(sale)
+            }
         }
     }
 

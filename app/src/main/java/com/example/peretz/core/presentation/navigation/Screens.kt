@@ -18,4 +18,8 @@ object Screens {
     data object Home : Screen, Serializable {
         private fun readResolve(): Any = Home
     }
+
+    data object Sale : Screen, Serializable {
+        private fun readResolve(): Any = Sale
+    }
 }
