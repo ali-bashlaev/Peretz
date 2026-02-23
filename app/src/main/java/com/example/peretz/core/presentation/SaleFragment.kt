@@ -38,7 +38,6 @@ class SaleFragment : Fragment(R.layout.fragment_sale) {
         binding.saleTopbarBackButton.setOnClickListener {
             navigator.goBack()
         }
-
     }
 
     override fun onDestroyView() {
