@@ -5,4 +5,5 @@
     <string name="meal_description_example">Листья романо, маринованное куриное филе, черри, ароматные сухарики,заправленные соусом цезарь, посыпанное стружкой сыра пармезан</string>
     <string name="home_roll_text">Ролл 🎁\nв подарок</string>
     <string name="sale_description_text">С 17 июля по 1 августа во всех кафе Pascucci будет действовать акция, в рамках которой, при любом заказе от 1000 рублей будет прилагаться одна порция роллов на выбор в подарок!</string>
+    <string name="bottom_menu_home_tab_title">Главная</string>
 </resources>
