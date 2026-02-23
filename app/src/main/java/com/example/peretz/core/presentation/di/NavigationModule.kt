@@ -6,4 +6,6 @@ import org.koin.dsl.module
 
 val navigationModule = module {
     factory<AndroidNavigator> { NavigationControllerHolder.requireNavigator() }
+    single { get<AndroidNavigator>().screenResolver }
+    single { get<AndroidNavigator>().navigationFactory }
 }

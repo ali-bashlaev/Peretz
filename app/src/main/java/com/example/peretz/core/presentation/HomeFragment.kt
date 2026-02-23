@@ -44,10 +44,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     )
 
     val sales = listOf(
-        SaleModel(R.drawable.img_roll),
-        SaleModel(R.drawable.img_pizza),
-        SaleModel(R.drawable.img_roll),
-        SaleModel(R.drawable.img_pizza)
+        SaleModel(id = "roll", image = R.drawable.img_roll),
+        SaleModel(id = "pizza", image = R.drawable.img_pizza),
+        SaleModel(id = "roll", image = R.drawable.img_roll),
+        SaleModel(id = "pizza", image = R.drawable.img_pizza)
     )
 
     val categories = listOf(
@@ -69,7 +69,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         mealsRecyclerView = binding.mealsHomeList
         categoriesRecyclerView = binding.categoriesHomeList
 
-        salesRecyclerView.adapter = SaleAdapter(sales) { navigator.goForward(Screens.Sale) }
+        salesRecyclerView.adapter = SaleAdapter(sales) {
+            navigator.goForward(Screens.Sale(it.id))
+        }
         mealsRecyclerView.adapter = MealAdapter(salads)
         categoriesRecyclerView.adapter = CategoriesAdapter(categories)
 
