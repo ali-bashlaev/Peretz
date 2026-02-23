@@ -6,6 +6,7 @@
     <color name="brand_mine_shaft">#242424</color>
     <color name="brand_dove_gray">#686868</color>
     <color name="brand_cod_gray">#151515</color>
+    <color name="brand_green_haze">#00A52B</color>
 
     <color name="home_unselected_dot_indicator">@color/brand_mine_shaft</color>
     <color name="home_selected_dot_indicator">@color/brand_dove_gray</color>
@@ -13,4 +14,9 @@
     <color name="home_sale_text_color">@color/white</color>
     <color name="home_category_background">@color/brand_mine_shaft</color>
     <color name="home_category_text">@color/brand_dove_gray</color>
+
+    <color name="sale_background">@color/brand_cod_gray</color>
+    <color name="sale_topbar_background">@color/brand_mine_shaft</color>
+    <color name="sale_description_text">@color/brand_dove_gray</color>
+    <color name="sale_button_background">@color/brand_green_haze</color>
 </resources>

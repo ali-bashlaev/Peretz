@@ -19,7 +19,9 @@ object Screens {
         private fun readResolve(): Any = Home
     }
 
-    data object Sale : Screen, Serializable {
-        private fun readResolve(): Any = Sale
+    data class Sale(
+        val id: String
+    ) : Screen, Serializable {
+        private fun readResolve(): Any = Sale(id)
     }
 }
