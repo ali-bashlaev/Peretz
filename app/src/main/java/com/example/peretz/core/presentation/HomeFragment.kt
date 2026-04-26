@@ -9,8 +9,11 @@ import com.example.peretz.R
 import com.example.peretz.core.domain.di.model.CategoryModel
 import com.example.peretz.core.domain.di.model.MealModel
 import com.example.peretz.core.domain.di.model.SaleModel
-import com.example.peretz.core.presentation.navigation.Screens
+import com.example.peretz.core.presentation.adapters.categoriesAdapterDelegate
+import com.example.peretz.core.presentation.adapters.mealAdapterDelegate
+import com.example.peretz.core.presentation.adapters.saleAdapterDelegate
 import com.example.peretz.databinding.FragmentHomeBinding
+import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.jamal_aliev.navigationcontroller.navigator.NavigationControllerHolder
 import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
 import me.aartikov.alligator.Navigator
@@ -69,11 +72,30 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         mealsRecyclerView = binding.mealsHomeList
         categoriesRecyclerView = binding.categoriesHomeList
 
-        salesRecyclerView.adapter = SaleAdapter(sales) {
-            navigator.goForward(Screens.Sale(it.id))
+        // Example for a simple list of Meals
+        val mealsAdapter = ListDelegationAdapter(
+            mealAdapterDelegate()
+        ).apply {
+            items = salads
         }
-        mealsRecyclerView.adapter = MealAdapter(salads)
-        categoriesRecyclerView.adapter = CategoriesAdapter(categories)
+
+        val categoriesAdapter = ListDelegationAdapter(
+            categoriesAdapterDelegate()
+        ).apply {
+            items = categories
+        }
+
+        val salesAdapter = ListDelegationAdapter(
+            saleAdapterDelegate { sale ->
+                // Handle sale click here
+            }
+        ).apply {
+            items = sales
+        }
+
+        mealsRecyclerView.adapter = mealsAdapter
+        categoriesRecyclerView.adapter = categoriesAdapter
+        salesRecyclerView.adapter = salesAdapter
 
         snapHelper.attachToRecyclerView(salesRecyclerView)
         pagerIndicatorHorizontal.attachToRecyclerView(salesRecyclerView)

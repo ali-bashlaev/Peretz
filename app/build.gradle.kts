@@ -48,6 +48,8 @@ dependencies {
 
     implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
     implementation("com.github.wching:Android-Indefinite-Pager-Indicator:1.5")
+    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.2")
+    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2")
 
     // Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
