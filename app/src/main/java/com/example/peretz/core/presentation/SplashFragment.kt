@@ -1,4 +1,4 @@
-package com.example.peretz
+package com.example.peretz.core.presentation
 
 import android.os.Bundle
 import android.view.View

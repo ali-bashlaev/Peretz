@@ -14,4 +14,14 @@ object Screens {
     }
 
     data class Otp(val phone: String) : Screen, Serializable
+
+    data object Home : Screen, Serializable {
+        private fun readResolve(): Any = Home
+    }
+
+    data class Sale(
+        val id: String
+    ) : Screen, Serializable {
+        private fun readResolve(): Any = Sale(id)
+    }
 }

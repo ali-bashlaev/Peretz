@@ -1,11 +1,10 @@
-package com.example.peretz
+package com.example.peretz.core.presentation
 
 import android.app.Application
 import com.example.peretz.core.domain.di.allModules
-import com.example.peretz.core.presentation.navigation.AppRegistryNavigationControllerFactory
 import com.jamal_aliev.navigationcontroller.navigator.NavigationControllerHolder
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.GlobalContext.startKoin
+import org.koin.core.context.GlobalContext
 
 class PeretzApp : Application() {
 
@@ -16,7 +15,7 @@ class PeretzApp : Application() {
     }
 
     private fun initDi() {
-        startKoin {
+        GlobalContext.startKoin {
             androidContext(applicationContext)
             modules(allModules)
         }
