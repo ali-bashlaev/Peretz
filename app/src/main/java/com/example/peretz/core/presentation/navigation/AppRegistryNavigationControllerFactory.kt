@@ -1,8 +1,8 @@
 package com.example.peretz.core.presentation.navigation
 
 import com.example.peretz.InputNumberFragment
-import com.example.peretz.OtpFragment
-import com.example.peretz.SplashFragment
+import com.example.peretz.core.presentation.OtpFragment
+import com.example.peretz.core.presentation.SplashFragment
 import com.jamal_aliev.navigationcontroller.core.NavigationControllerFactory
 
 

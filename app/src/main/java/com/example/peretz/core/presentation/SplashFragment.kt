@@ -3,6 +3,7 @@ package com.example.peretz.core.presentation
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.example.peretz.R
 import com.example.peretz.core.presentation.navigation.Screens
 import com.jamal_aliev.navigationcontroller.navigator.NavigationControllerHolder
 import me.aartikov.alligator.Navigator
